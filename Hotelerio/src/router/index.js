@@ -1,23 +1,44 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import LoginView from '../views/LoginView.vue'
+import SignupView from '../views/SignupView.vue'
+import CheckAvailableRooms from '../views/CheckAvailableRooms.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      name: 'login',
+      component: LoginView
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    }
+      path: '/signup',
+      name: 'signup',
+      component: SignupView
+    },
+    {
+      path: '/checkAvailableRooms',
+      name: 'checkAvailableRooms',
+      component: CheckAvailableRooms,
+      meta: {
+        requiresAuth: true
+      }
+    },
   ]
 })
 
+router.beforeEach((to,_,next)=> {
+  console.log(`to: ${to.name} -- Auth Required? ${to.meta.requiresAuth}`)
+
+  const token = localStorage.getItem('token')
+  // Si la ruta a donde quiero ir necesita autenticación
+  // ... y no tengo el token, llévame a la pagina de login
+  if (to.meta.requiresAuth && !token) {
+    next({name: 'login'})
+  } else {
+    next()
+  }
+})
+
 export default router
+

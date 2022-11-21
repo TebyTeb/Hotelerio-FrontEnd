@@ -4,6 +4,9 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  background-image: url(../assets/images/Proyecto-nuevo.jpg);
+  background-repeat: no-repeat;
+  
 
   font-weight: normal;
 }
