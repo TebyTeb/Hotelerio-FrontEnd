@@ -14,8 +14,8 @@ import { RouterLink, RouterView } from 'vue-router'
         Welcome {{ email }} -
         <button @click="logout">Logout</button>
       </nav>
-  </header>
-  <RouterView />
+    </header>
+    <RouterView />
   </div>
 </template>
 
@@ -32,24 +32,36 @@ export default {
       localStorage.removeItem('token')
       this.token = ''
       localStorage.removeItem('email')
-      this.$router.push({name: 'login'})
+      this.$router.push({ name: 'auth' })
     }
   },
-  created () {
-    this.token = localStorage.getItem('token')
-    this.email = localStorage.getItem('email')
+  // Escuchamos el CustomEvent creado con la funcion login/signup
+  mounted() {
+    window.addEventListener('localstorage-changed', (event) => {
+      this.token = event.detail.token;
+      this.email = event.detail.email;
+    });
+  },
+  beforeUnmount() {
+    window.removeEventListener('localstorage-changed', (event) => {
+      this.token = event.detail.token;
+      this.email = event.detail.email;
+    });
   }
 }
 </script>
 
 <style scoped lang="scss">
-.view{
-  display:flex;
+.view {
+  display: flex;
   align-items: center;
   flex-direction: column;
 }
+
 .header {
-  h3,nav {
+
+  h3,
+  nav {
     display: inline-block;
     margin-right: 40px;
   }

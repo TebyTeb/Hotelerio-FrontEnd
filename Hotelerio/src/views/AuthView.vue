@@ -97,7 +97,7 @@ export default {
       },
       password2: "",
       birth: "",
-      signup: true,
+      signup: false,
       passwdMess: ""
     }
   },
