@@ -3,7 +3,8 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header class="header">
+  <div class='view'>
+    <header class="header">
       <h3>Hotelerio</h3>
       <nav v-if="!token">
         <RouterLink to="/">Login</RouterLink> |
@@ -14,8 +15,8 @@ import { RouterLink, RouterView } from 'vue-router'
         <button @click="logout">Logout</button>
       </nav>
   </header>
-
   <RouterView />
+  </div>
 </template>
 
 <script>
@@ -42,6 +43,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.view{
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
 .header {
   h3,nav {
     display: inline-block;

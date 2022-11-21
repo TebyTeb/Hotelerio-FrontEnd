@@ -39,9 +39,7 @@ export default {
 
 <style scoped lang="scss">
 .form {
-  background-color:green;
   padding: 15px;
-  color:red;
   label {
     display: block;
     padding: 5px;
