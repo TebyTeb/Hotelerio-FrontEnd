@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '../views/LoginView.vue'
 import SignupView from '../views/SignupView.vue'
+import AuthView from '../views/AuthView.vue'
 import CheckAvailableRooms from '../views/CheckAvailableRooms.vue'
 
 const router = createRouter({
@@ -17,6 +18,11 @@ const router = createRouter({
       component: SignupView
     },
     {
+      path: '/auth',
+      name: 'auth',
+      component: AuthView
+    },
+    {
       path: '/checkAvailableRooms',
       name: 'checkAvailableRooms',
       component: CheckAvailableRooms,
@@ -28,7 +34,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to,_,next)=> {
-  console.log(`to: ${to.name} -- Auth Required? ${to.meta.requiresAuth}`)
+/*   console.log(`to: ${to.name} -- Auth Required? ${to.meta.requiresAuth}`) */
 
   const token = localStorage.getItem('token')
   // Si la ruta a donde quiero ir necesita autenticación
