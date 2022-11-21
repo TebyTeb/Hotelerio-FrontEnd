@@ -1,69 +1,19 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import NavBar from '../src/components/NavBar.vue'
 </script>
 
 <template>
+     <NavBar />
   <div class='view'>
-    <header class="header">
-      <h3>Hotelerio</h3>
-      <nav v-if="!token">
-        <RouterLink to="/">Login</RouterLink> |
-        <RouterLink to="/signup">Signup</RouterLink>
-      </nav>
-      <nav v-else>
-        Welcome {{ email }} -
-        <button @click="logout">Logout</button>
-      </nav>
-    </header>
     <RouterView />
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      token: '',
-      email: ''
-    }
-  },
-  methods: {
-    logout() {
-      localStorage.removeItem('token')
-      this.token = ''
-      localStorage.removeItem('email')
-      this.$router.push({ name: 'auth' })
-    }
-  },
-  // Escuchamos el CustomEvent creado con la funcion login/signup
-  mounted() {
-    window.addEventListener('localstorage-changed', (event) => {
-      this.token = event.detail.token;
-      this.email = event.detail.email;
-    });
-  },
-  beforeUnmount() {
-    window.removeEventListener('localstorage-changed', (event) => {
-      this.token = event.detail.token;
-      this.email = event.detail.email;
-    });
-  }
-}
-</script>
 
 <style scoped lang="scss">
 .view {
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-
-.header {
-
-  h3,
-  nav {
-    display: inline-block;
-    margin-right: 40px;
-  }
 }
 </style>

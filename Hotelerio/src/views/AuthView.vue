@@ -75,9 +75,6 @@
 
       </div>
     </div>
-    <pre>
-      {{ newUser }}
-    </pre>
   </div>
 </template>
 
@@ -168,7 +165,7 @@ export default {
         if (response.error) {
           alert('Error creating account')
         } else {
-          this.$router.push({ name: 'checkAvailableRooms' })
+          this.$router.push({ name: 'personal' })
         }
       }
     },
@@ -178,9 +175,9 @@ export default {
     async login() {
       const response = await API.login(this.newUser)
       if (response.error) {
-        alert('wrong username/password')
+        alert('wrong username/password') // No funciona
       } else {
-        this.$router.push({name: 'checkAvailableRooms'})
+        this.$router.push({name: 'personal'})
       }
     }
   }

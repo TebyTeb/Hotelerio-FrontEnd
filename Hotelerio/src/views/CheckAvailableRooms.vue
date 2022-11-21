@@ -1,6 +1,9 @@
 <template>
     <div class="checkRooms">
-      <h1>Bienvenido a nuestro hotel</h1>
+      <br>
+      <br>
+      <h1>Make a Reservation</h1>
+      <br>
       <form>
         <label>
           CheckIn
@@ -10,7 +13,7 @@
           CheckOut
           <input type="date" v-model="checkout">
         </label>
-        <button @click.prevent="searchRooms()">Search Rooms</button>
+        <button @click.prevent="searchRooms()" type="button" class="btn btn-primary">Search Rooms</button>
       </form>
   
       <div class="rooms">
@@ -38,3 +41,11 @@
     }
   }
   </script>
+
+  <style lang="scss" scoped>
+  .checkRooms{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+  </style>
