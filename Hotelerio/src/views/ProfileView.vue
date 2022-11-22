@@ -8,7 +8,6 @@ import api from '../services/api'
   <br>
   <h1>My Profile</h1>
   <PersonalCard :profile="profile" />
-  <br>
   <button @click.prevent="updateProfile">Update Profile</button>
   <button>Change Password</button>
 </template>

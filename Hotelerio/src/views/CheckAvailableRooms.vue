@@ -3,7 +3,6 @@
       <br>
       <br>
       <h1>Make a Reservation</h1>
-      <br>
       <form>
         <label>
           CheckIn

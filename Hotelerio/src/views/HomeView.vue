@@ -15,10 +15,6 @@ import { RouterLink } from 'vue-router'
       <button type="button" class="btn btn-secondary">Types of rooms</button>
     </div>
   </div>
-
-
-
-
 </template>
 
 <script>
@@ -36,7 +32,7 @@ export default {
   padding: 1rem;
   margin:2rem;
   width: 400px;
-  height: 350px
+  height: 350px;
 }
 
 #container {
