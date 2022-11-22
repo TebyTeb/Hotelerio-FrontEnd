@@ -1,6 +1,6 @@
 <template>
   <header>
-        <nav class="navbar navbar-expand " v-if="!token">
+    <nav class="navbar navbar-expand " v-if="!token">
       <div class="container-fluid">
         <h3 class="navbar-brand">HotelerioApp</h3>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -48,7 +48,7 @@
         Welcome {{ email }}
         <button @click="logout">Logout</button>
       </div>
-    </nav> 
+    </nav>
   </header>
 </template>
 
@@ -93,8 +93,11 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <style lang="scss" scoped>
-header{
-    background-color: grey;
+header {
+  height: 50px;
+  width: 100%;
+  flex-shrink: 0;
+  background-color: grey;
 }
 </style>
 

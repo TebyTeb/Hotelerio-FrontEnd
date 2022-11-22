@@ -28,7 +28,7 @@ export default {
 
 <style scoped>
 .container {
-  height: 100%;
+  height: auto;
   width: 100%;
   margin: 3rem auto;
 }

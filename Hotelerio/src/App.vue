@@ -5,17 +5,26 @@ import Footer from '../src/components/Footer.vue'
 </script>
 
 <template>
-  <NavBar />
-  <div class='view'>
-    <RouterView />
-  </div>
-  <Footer />
+  <main class="view bg-img">
+    <NavBar />
+    <RouterView class="router-view"/>
+    <Footer />
+  </main>
 </template>
 
 <style scoped lang="scss">
 .view {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+}
+.router-view {
+  flex: 1 0 auto;
+}
+.bg-img {
+  background-image: url(./assets/images/reception/recepcion-blur.png);
+  background-size: cover;
+  background-position: center;
 }
 </style>
