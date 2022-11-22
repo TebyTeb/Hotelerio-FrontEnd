@@ -30,10 +30,10 @@
                             Menu
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" >My Profile</a></li>
+                            <li><a class="dropdown-item" :href="'/profile'">My Profile</a></li>
                             <li><a class="dropdown-item" >My Reservation</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" >Home</a></li>
+                            <li><a class="dropdown-item" :href="'/personal'">Personal Page</a></li>
                             <li><a class="dropdown-item" >Types of Rooms</a></li>
                             <li><a class="dropdown-item" :href="'/checkAvailableRooms'">Make a Reservation</a></li>
                             <li><a class="dropdown-item">Contact Info</a></li>
@@ -65,6 +65,10 @@ export default {
             localStorage.removeItem('email')
             this.$router.push({ name: 'auth' })
         }
+    },
+    beforeMount(){
+        this.token = localStorage.getItem('token')
+        this.email = localStorage.getItem('email')
     },
     // Escuchamos el CustomEvent creado con la funcion login/signup
     mounted() {
