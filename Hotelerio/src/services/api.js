@@ -33,6 +33,18 @@ async function login(newUser) {
   return token
 }
 
+async function getProfile(email) {
+  const response = await API.get('/users/profile', {
+    params: {
+      email
+    },
+    headers: {
+      token: localStorage.getItem('token')
+    }
+  })
+  return response.data[0]
+}
+
 async function getAvailableRooms(checkin, checkout) {
   const response = await API.get('/rooms/available', {
     params: {
@@ -49,5 +61,6 @@ async function getAvailableRooms(checkin, checkout) {
 export default {
   signup,
   login,
-  getAvailableRooms
+  getAvailableRooms,
+  getProfile
 }

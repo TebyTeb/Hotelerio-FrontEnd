@@ -1,48 +1,74 @@
 <template>
-
-    <div class="card-header">
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
         Name
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ this.profile.name }}</h5>
+      </div>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">{{ this.newUser.name }}</h5>
-    </div>
-    <div class="card-header">
+    <br>
+    <div class="card">
+      <div class="card-header">
         Surname
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ this.profile.surname }}</h5>
+      </div>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">{{ this.newUser.surname }}</h5>
-    </div>
-    <div class="card-header">
+    <br>
+    <div class="card">
+      <div class="card-header">
         Birthdate
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">placeholder</h5>
+      </div>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">{{ this.newUser.birth }}</h5>
-    </div>
-    <div class="card-header">
+    <br>
+    <div class="card">
+      <div class="card-header">
         Phone
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ this.profile.phone }}</h5>
+      </div>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">{{ this.newUser.phone }}</h5>
-    </div>
-    <div class="card-header">
+    <br>
+    <div class="card">
+      <div class="card-header">
         Identification
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ this.profile.identification }}</h5>
+      </div>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">{{ this.newUser.identification }}</h5>
-    </div>
-    <div class="card-header">
+    <br>
+    <div class="card">
+      <div class="card-header">
         Email
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ this.profile.email }}</h5>
+      </div>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">{{ this.newUser.email }}</h5>
-    </div>
+    <br>
+  </div>
 </template>
 
 <script>
 export default {
-    props: {
-        newUser: Object
-    }
+  props: {
+    profile: Object
+  },
+  computed: {
+    /* birth() {
+      const date = this.profile.birthDate
+      const birthDate = date.split('T')[0]
+      return birthDate
+    } */
+  }
 }
 </script>
 
