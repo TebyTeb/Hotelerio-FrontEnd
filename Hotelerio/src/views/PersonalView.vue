@@ -14,7 +14,6 @@ export default {
     <br>
     <br>
     <h1>Personal Page</h1>
-    <br>
     <div>
         <PersonalButton text="Make a Reservation" link="checkAvailableRooms" />
     </div>

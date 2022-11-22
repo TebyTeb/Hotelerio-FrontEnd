@@ -1,12 +1,13 @@
 <template>
-  <div class="container">
+  <div id="container" class="img-fluid position-relative">
     <div class="row main justify-content-center align-items-center">
       <div class="col-8 col-md-6 col-lg-4">
 
         <form class="form-signup" v-if="signup">
+          <br>
+          <br>
           <h1 class="h3 mb-3 font-weight-normal">Create your account</h1>
-
-
+          
           <label for="inputName" class="sr-only">Name:</label>
           <input id="inputName" type="text" class="form-control mb-2" v-model="newUser.name">
 
@@ -54,8 +55,9 @@
         </form>
 
         <form class="form-signup" v-else>
+          <br>
+          <br>
           <h1 class="h3 mb-3 font-weight-normal">Log in</h1>
-
           <label for="inputEmail" class="sr-only">Email address</label>
           <input type="text" id="inputEmail" class="form-control mb-1" placeholder="Email address" autofocus=""
             v-model="newUser.email" />
@@ -155,7 +157,7 @@ export default {
     }
   },
   methods: {
-    async signUp () {
+    async signUp() {
       if (
         this.emailValid &&
         this.passwordValid &&
@@ -177,7 +179,7 @@ export default {
       if (response.error) {
         alert('wrong username/password') // No funciona
       } else {
-        this.$router.push({name: 'personal'})
+        this.$router.push({ name: 'personal' })
       }
     }
   }
