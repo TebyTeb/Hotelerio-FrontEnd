@@ -1,5 +1,5 @@
 <script setup>
-import Card from '../components/Card.vue'
+import PersonalCard from '../components/PersonalCard.vue'
 import api from '../services/api'
 </script>
 
@@ -7,7 +7,7 @@ import api from '../services/api'
   <br>
   <br>
   <h1>My Profile</h1>
-  <Card :profile="profile" />
+  <PersonalCard :profile="profile" />
   <br>
   <button @click.prevent="updateProfile">Update Profile</button>
   <button>Change Password</button>

@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="navbar navbar-expand-lg bg-light" v-if="!token">
+    <nav class="navbar navbar-expand bg-light" v-if="!token">
       <div class="container-fluid">
         <h3 class="navbar-brand">HotelerioApp</h3>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -19,7 +19,7 @@
       </div>
     </nav>
 
-    <nav class="navbar navbar-expand-lg bg-light" v-else>
+    <nav class="navbar navbar-expand bg-light" v-else>
       <div class="container-fluid">
         <h3 class="navbar-brand">HotelerioApp</h3>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">

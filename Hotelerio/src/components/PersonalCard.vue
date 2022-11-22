@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div v-if="profile" class="container" >
     <div class="card">
       <div class="card-header">
         Name
@@ -23,7 +23,7 @@
         Birthdate
       </div>
       <div class="card-body">
-        <h5 class="card-title">placeholder</h5>
+        <h5 class="card-title">{{birth}}</h5>
       </div>
     </div>
     <br>
@@ -63,11 +63,14 @@ export default {
     profile: Object
   },
   computed: {
-    /* birth() {
-      const date = this.profile.birthDate
+     birth() {
+      if(this.profile.birthDate){
+        const date = this.profile.birthDate
       const birthDate = date.split('T')[0]
       return birthDate
-    } */
+      }
+      
+    } 
   }
 }
 </script>
