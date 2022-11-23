@@ -20,7 +20,8 @@ async function signup(newUser) {
 }
 
 async function login(newUser) {
-  const { data: { token, email } } = await API.post('/auth/login', newUser)
+  try {
+    const { data: { token, email } } = await API.post('/auth/login', newUser)
   localStorage.setItem('token', token)
   localStorage.setItem('email', email)
 
@@ -31,6 +32,10 @@ async function login(newUser) {
     }
   }))
   return token
+  } catch (error) {
+    return {error: error.message}
+  }
+  
 }
 
 async function getProfile(email) {

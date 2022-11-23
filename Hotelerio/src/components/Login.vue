@@ -43,7 +43,7 @@ export default {
       if (response.error) {
         alert('wrong username/password') // No funciona
       } else {
-        this.$router.push({ name: 'home' })
+        this.$router.push({ name: 'personal' })
       }
     },
     toggleForm() {

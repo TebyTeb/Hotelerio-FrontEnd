@@ -15,10 +15,19 @@
         <button @click.prevent="searchRooms()" type="button" class="btn btn-primary">Search Rooms</button>
       </form>
   
-      <div class="rooms">
-        <div class="room" v-for="(room,idx) in rooms" :key="idx">
-          {{ room._id }}
+      <div class="box">
+        <div class="standards" v-if="standards.length !== 0">
+          <p>Number of Standard Rooms available: {{standards.length}}</p>
         </div>
+
+        <div class="doubles" v-if="doubles.length !== 0">
+          <p>Number of Double Rooms available: {{standards.length}}</p>
+        </div>
+        
+        <div class="suites" v-if="suites.length !== 0">
+          <p>Number of Suite Rooms available: {{standards.length}}</p>
+        </div>
+
       </div>
     </div>
   </template>
@@ -30,12 +39,17 @@
       return {
         checkin: '',
         checkout: '',
-        rooms: []
+        suites: [],
+        doubles: [],
+        standards: []
       }
     },
     methods: {
       async searchRooms() {
-        this.rooms = await API.getAvailableRooms(this.checkin, this.checkout)
+        const response = await API.getAvailableRooms(this.checkin, this.checkout)
+        this.suites = response.filter(el => {return el.typeOfRoom === 'Suite'})
+        this.doubles = response.filter(el => {return el.typeOfRoom === 'Double'})
+        this.standards = response.filter(el => {return el.typeOfRoom === 'Standard'})
       }
     }
   }
@@ -46,5 +60,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  color: white;
 }
   </style>
