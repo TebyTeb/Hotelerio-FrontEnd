@@ -58,6 +58,8 @@
 
 <script>
 import API from '../services/api.js'
+import { useAuthStore } from '../stores/store'
+
 export default {
   data() {
     return {
@@ -72,7 +74,8 @@ export default {
       },
       password2: "",
       birth: "",
-      passwdMess: ""
+      passwdMess: "",
+      store: useAuthStore()
     }
   },
   computed: {
@@ -142,6 +145,7 @@ export default {
         if (response.error) {
           alert('Error creating account')
         } else {
+          this.store.login(response.token, response.email)
           this.$router.push({ name: 'personal' })
         }
       }

@@ -28,6 +28,8 @@
 
 <script>
 import API from '../services/api.js'
+import { useAuthStore } from '../stores/store'
+
 export default {
   data() {
     return {
@@ -35,6 +37,7 @@ export default {
         email: '',
         password: ''
       },
+      store: useAuthStore()
     }
   },
   methods: {
@@ -43,6 +46,7 @@ export default {
       if (response.error) {
         alert('wrong username/password') // No funciona
       } else {
+        this.store.login(response.token, response.email)
         this.$router.push({ name: 'personal' })
       }
     },

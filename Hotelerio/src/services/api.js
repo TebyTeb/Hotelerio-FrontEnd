@@ -5,37 +5,22 @@ const API = axios.create({
 })
 
 async function signup(newUser) {
-  const { data: { token, email } } = await API.post('/auth/signup', newUser)
-  localStorage.setItem('token', token)
-  localStorage.setItem('email', email)
-
-  //Creamos un CustomEvent que se dispara cada vez que cambiamos valores en localStorage
-  window.dispatchEvent(new CustomEvent('localstorage-changed', {
-    detail: {
-      token: localStorage.getItem('token'),
-      email: localStorage.getItem('email')
-    }
-  }))
-  return token
+  try {
+    const { data } = await API.post('/auth/signup', newUser)
+    return data
+  } catch (error) {
+    return { error: error.message }
+  }
 }
 
 async function login(newUser) {
   try {
-    const { data: { token, email } } = await API.post('/auth/login', newUser)
-  localStorage.setItem('token', token)
-  localStorage.setItem('email', email)
-
-  window.dispatchEvent(new CustomEvent('localstorage-changed', {
-    detail: {
-      token: localStorage.getItem('token'),
-      email: localStorage.getItem('email')
-    }
-  }))
-  return token
+    const { data } = await API.post('/auth/login', newUser)
+    return data
   } catch (error) {
-    return {error: error.message}
+    return { error: error.message }
   }
-  
+
 }
 
 async function getProfile(email) {

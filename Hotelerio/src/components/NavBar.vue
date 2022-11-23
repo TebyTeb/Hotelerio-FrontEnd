@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="navbar navbar-expand " v-if="!token">
+    <nav class="navbar navbar-expand " v-if="!store.isLoggedIn">
       <div class="container-fluid">
         <h3 class="navbar-brand">HotelerioApp</h3>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -45,7 +45,7 @@
             </ul>
           </li>
         </div>
-        Welcome {{ email }}
+        Welcome {{ store.userEmail }}
         <button @click="logout">Logout</button>
       </div>
     </nav>
@@ -53,43 +53,22 @@
 </template>
 
 <script>
+import { useAuthStore } from '../stores/store'
+import { RouterLink } from 'vue-router'
+
 export default {
   data() {
     return {
-      token: '',
-      email: ''
+      store: useAuthStore()
     }
   },
   methods: {
     logout() {
-      localStorage.removeItem('token')
-      this.token = ''
-      localStorage.removeItem('email')
+      this.store.logout()
       this.$router.push({ name: 'auth' })
     }
   },
-  beforeMount() {
-    this.token = localStorage.getItem('token')
-    this.email = localStorage.getItem('email')
-  },
-  // Escuchamos el CustomEvent creado con la funcion login/signup
-  mounted() {
-    window.addEventListener('localstorage-changed', (event) => {
-      this.token = event.detail.token;
-      this.email = event.detail.email;
-    });
-  },
-  beforeUnmount() {
-    window.removeEventListener('localstorage-changed', (event) => {
-      this.token = event.detail.token;
-      this.email = event.detail.email;
-    });
-  }
 }
-</script>
-
-<script setup>
-import { RouterLink } from 'vue-router'
 </script>
 
 <style lang="scss" scoped>
