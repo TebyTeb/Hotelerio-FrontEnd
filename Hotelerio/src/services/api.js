@@ -47,10 +47,20 @@ async function getAvailableRooms(checkin, checkout) {
   return response.data
 }
 
+async function createReserv(reserv) {
+  const response = await API.post('/reserv', reserv, {
+    headers: {
+      token: localStorage.getItem('token')
+    }
+  })
+  return response.data
+}
+
 
 export default {
   signup,
   login,
   getAvailableRooms,
-  getProfile
+  getProfile,
+  createReserv
 }
