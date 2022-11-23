@@ -1,6 +1,7 @@
 <script setup>
 import PersonalCard from '../components/PersonalCard.vue'
 import api from '../services/api'
+import { useAuthStore } from '../stores/store';
 </script>
 
 <template>
@@ -17,6 +18,7 @@ import api from '../services/api'
 export default {
   data() {
     return {
+      store: useAuthStore(),
       profile: {}
     }
   },
@@ -25,7 +27,7 @@ export default {
     }
   },
 async created() {
-  this.profile = await api.getProfile(localStorage.email)
+  this.profile = await api.getProfile(store.userEmail)
 }
 }
 </script>
