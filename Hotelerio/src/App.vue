@@ -6,7 +6,7 @@ import Footer from '../src/components/Footer.vue'
 
 <template>
   <main class="view bg-img">
-    <NavBar />
+    <NavBar class="navbar"/>
     <RouterView class="router-view"/>
     <Footer />
   </main>
@@ -21,10 +21,17 @@ import Footer from '../src/components/Footer.vue'
 }
 .router-view {
   flex: 1 0 auto;
+  margin-top: 100px;
+margin-bottom: 50px;
+
 }
 .bg-img {
   background-image: url(./assets/images/reception/recepcion-blur.png);
   background-size: cover;
   background-position: center;
+}
+.navbar{
+  position:fixed;
+  top:0;
 }
 </style>

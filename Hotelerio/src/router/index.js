@@ -4,6 +4,7 @@ import AuthView from '../views/AuthView.vue'
 import CheckAvailableRooms from '../views/CheckAvailableRooms.vue'
 import PersonalView from '../views/PersonalView.vue'
 import ProfileView from '../views/ProfileView.vue'
+import Companions from '../views/Companions.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,6 +20,14 @@ const router = createRouter({
       component: AuthView
     },
     {
+      path: '/personal',
+      name: 'personal',
+      component: PersonalView,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: '/checkAvailableRooms',
       name: 'checkAvailableRooms',
       component: CheckAvailableRooms,
@@ -27,9 +36,9 @@ const router = createRouter({
       }
     },
     {
-      path: '/personal',
-      name: 'personal',
-      component: PersonalView,
+      path: '/companions',
+      name: 'companions',
+      component: Companions,
       meta: {
         requiresAuth: true
       }

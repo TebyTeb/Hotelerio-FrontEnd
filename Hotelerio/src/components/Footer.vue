@@ -40,7 +40,8 @@ export default {
   text-align: center;
   padding: 1rem;
   width: 100%;
-  min-height: 12vh;
+  height:fit-content;
+  min-height: 50px;
   flex-shrink: 0;
 }
 @media(min-width: 900px) {

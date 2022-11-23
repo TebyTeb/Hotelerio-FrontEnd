@@ -61,7 +61,7 @@ export default {
 .container {
   border: 1px solid grey;
   border-radius: 1rem;
-  padding: 2rem;
   background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
 }
 </style>

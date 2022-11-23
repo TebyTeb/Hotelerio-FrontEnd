@@ -27,3 +27,31 @@ export const useAuthStore = defineStore('auth', {
     },
   },
 })
+export const useReservationStore = defineStore('reservation',{
+  state:() =>{
+    return {
+      type: useStorage('type',null),
+      checkin: useStorage('checkin',null),
+      checkout: useStorage('checkout',null),
+      id:useStorage('id',null)
+    }
+  },
+  getters:{
+    getRoomInfo(){
+      return {
+        type:this.type,
+        checkin:this.checkin,
+        checkout:this.checkout,
+        id:this.id
+      }
+    }
+  },
+  actions:{
+    setRoomInfo(type, checkin, checkout, id){
+        this.type = type
+        this.checkin = checkin
+        this.checkout = checkout
+        this.id = id
+    }
+  }
+})
