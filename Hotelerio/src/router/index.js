@@ -4,7 +4,8 @@ import AuthView from '../views/AuthView.vue'
 import CheckAvailableRooms from '../views/CheckAvailableRooms.vue'
 import PersonalView from '../views/PersonalView.vue'
 import ProfileView from '../views/ProfileView.vue'
-import Companions from '../views/Companions.vue'
+import ConfirmReserv from '../views/ConfirmReserv.vue'
+import MyReservsView from '../views/MyReservsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,7 +29,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/checkAvailableRooms',
+      path: '/available',
       name: 'checkAvailableRooms',
       component: CheckAvailableRooms,
       meta: {
@@ -36,9 +37,9 @@ const router = createRouter({
       }
     },
     {
-      path: '/companions',
-      name: 'companions',
-      component: Companions,
+      path: '/confirm',
+      name: 'confirm',
+      component: ConfirmReserv,
       meta: {
         requiresAuth: true
       }
@@ -47,6 +48,14 @@ const router = createRouter({
       path: '/profile',
       name: 'profile',
       component: ProfileView,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/my-reservations',
+      name: 'myReservations',
+      component: MyReservsView,
       meta: {
         requiresAuth: true
       }
