@@ -39,7 +39,7 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows:auto;
-  background-image: url('../assets/images/reception/reecpcion.jpg');
+  /* background-image: url('../assets/images/reception/reecpcion.jpg'); */
   background-size: cover;
   background-position: center;
   width: 100vw;
