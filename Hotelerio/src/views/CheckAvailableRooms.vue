@@ -19,21 +19,21 @@
       <div class="box" v-if="searched">
         <div class="rooms">
           <p class="name">Number of Standard Rooms available: {{ standards.length }}</p>
-          <RouterLink :to="{ name: 'companions' }">
+          <RouterLink :to="{ name: 'confirm' }">
             <button class="btn btn-secondary" :class="{ hidden: standards.length === 0 }" @click="sendRoom(standards[0])">Reserve One</button>
           </RouterLink>
         </div>
 
         <div class="rooms">
           <p class="name">Number of Double Rooms available: {{ doubles.length }}</p>
-          <RouterLink :to="{ name: 'companions' }">
+          <RouterLink :to="{ name: 'confirm' }">
           <button class="btn btn-secondary" :class="{ hidden: doubles.length === 0 }" @click="sendRoom(doubles[0])">Reserve One</button>
           </RouterLink>
         </div>
 
         <div class="rooms">
           <p class="name">Number of Suite Rooms available: {{ suites.length }}</p>
-          <RouterLink :to="{ name: 'companions' }">
+          <RouterLink :to="{ name: 'confirm' }">
           <button class="btn btn-secondary" :class="{ hidden: suites.length === 0 }" @click="sendRoom(suites[0])">Reserve One</button>
           </RouterLink>
         </div>
