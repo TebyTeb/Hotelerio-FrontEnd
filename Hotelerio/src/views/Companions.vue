@@ -1,6 +1,6 @@
 <template>
     <div>
-
+{{roomInfo}}
     </div>
 </template>
 
@@ -11,8 +11,12 @@ import { useReservationStore } from '../stores/store'
     export default {
         data(){
             return{
+                roomInfo: {},
                 store: useReservationStore()
             }
+        },
+        created(){
+            this.roomInfo=this.store.getRoomInfo
         }
     }
 </script>
