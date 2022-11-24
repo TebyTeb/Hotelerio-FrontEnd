@@ -28,7 +28,10 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <RouterLink :to="{ name: 'home' }" class="dropdown-item">Home</RouterLink>
+                <RouterLink :to="{ name: 'personal' }" class="dropdown-item">Personal Page</RouterLink>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
               </li>
               <li>
                 <RouterLink :to="{ name: 'profile' }" class="dropdown-item">My Profile</RouterLink>
@@ -38,9 +41,6 @@
               </li>
               <li>
                 <hr class="dropdown-divider">
-              </li>
-              <li>
-                <RouterLink :to="{ name: 'personal' }" class="dropdown-item">Personal Page</RouterLink>
               </li>
               <li>
                 <RouterLink :to="{ name: 'typeOfRoom' }" class="dropdown-item">Types of Rooms</RouterLink>
