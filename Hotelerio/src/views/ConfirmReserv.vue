@@ -94,7 +94,7 @@ export default {
   justify-content: space-around;
   grid-auto-flow: row;
   flex-wrap: wrap;
-  width: 65%;
+  width: 70%;
 }
 
 .buttons {

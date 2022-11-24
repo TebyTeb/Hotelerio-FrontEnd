@@ -11,7 +11,7 @@
             <ul class="dropdown-menu">
               <li><RouterLink :to="{ name: 'home' }" class="dropdown-item">Home</RouterLink></li>
               <li><RouterLink :to="{ name: 'auth' }" class="dropdown-item">Register</RouterLink></li>
-              <li class="dropdown-item">Types of Rooms</li>
+              <li ><RouterLink :to="{ name: 'typeOfRoom' }" class="dropdown-item">Types of Rooms</RouterLink></li>
             </ul>
           </li>
         </div>
@@ -53,7 +53,6 @@
           </li>
         </div>
         Welcome {{ store.userEmail }}
-        <button @click="logout">Logout</button>
       </div>
     </nav>
   </header>
