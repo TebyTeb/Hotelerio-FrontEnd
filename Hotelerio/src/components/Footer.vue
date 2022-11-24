@@ -47,6 +47,6 @@ export default {
 }
 
 p {
-  font-weight: lighter;
+  font-weight: normal;
 }
 </style>

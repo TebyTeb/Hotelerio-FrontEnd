@@ -43,10 +43,10 @@
                 <hr class="dropdown-divider">
               </li>
               <li>
-                <RouterLink :to="{ name: 'typeOfRoom' }" class="dropdown-item">Types of Rooms</RouterLink>
+                <RouterLink :to="{ name: 'checkAvailableRooms' }" class="dropdown-item">Make a Reservation</RouterLink>
               </li>
               <li>
-                <RouterLink :to="{ name: 'checkAvailableRooms' }" class="dropdown-item">Make a Reservation</RouterLink>
+                <RouterLink :to="{ name: 'typeOfRoom' }" class="dropdown-item">Types of Rooms</RouterLink>
               </li>
               <li>
                 <hr class="dropdown-divider">
@@ -94,10 +94,13 @@ header {
 }
 .navbar-brand {
   font-style: normal;
-  letter-spacing: -1px;
+  letter-spacing: -3px;
   font-weight: bold;
+  font-size: 29px;
   color: rgb(30, 138, 134);
 }
-
+.nav-link {
+  font-size: 22px;
+}
 </style>
 
