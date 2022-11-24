@@ -16,7 +16,7 @@
     </div>
     <div>
       <h5>Opening Hours</h5>
-      <p>MO-SU 24H</p>
+      <p>MON-SUN 24H</p>
     </div>
     <div>
       <h5>Private Area</h5>
