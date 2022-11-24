@@ -68,7 +68,14 @@ export default {
 .reserv-info {
   margin: 1rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
+}
+@media(min-width: 800px) {
+  .reserv-info {
+    flex-wrap: nowrap;
+    margin: 1rem 0;
+  }
 }
 
 .no-reserv {

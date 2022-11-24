@@ -28,7 +28,10 @@
             </a>
             <ul class="dropdown-menu">
               <li>
-                <RouterLink :to="{ name: 'home' }" class="dropdown-item">Home</RouterLink>
+                <RouterLink :to="{ name: 'personal' }" class="dropdown-item">Personal Page</RouterLink>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
               </li>
               <li>
                 <RouterLink :to="{ name: 'profile' }" class="dropdown-item">My Profile</RouterLink>
@@ -40,13 +43,10 @@
                 <hr class="dropdown-divider">
               </li>
               <li>
-                <RouterLink :to="{ name: 'personal' }" class="dropdown-item">Personal Page</RouterLink>
+                <RouterLink :to="{ name: 'checkAvailableRooms' }" class="dropdown-item">Make a Reservation</RouterLink>
               </li>
               <li>
                 <RouterLink :to="{ name: 'typeOfRoom' }" class="dropdown-item">Types of Rooms</RouterLink>
-              </li>
-              <li>
-                <RouterLink :to="{ name: 'checkAvailableRooms' }" class="dropdown-item">Make a Reservation</RouterLink>
               </li>
               <li>
                 <hr class="dropdown-divider">
@@ -55,7 +55,9 @@
             </ul>
           </li>
         </div>
-        Welcome {{ store.userEmail }}
+        <span>
+          Welcome {{ store.userEmail }}
+        </span>
       </div>
     </nav>
   </header>
@@ -94,10 +96,13 @@ header {
 }
 .navbar-brand {
   font-style: normal;
-  letter-spacing: -1px;
+  letter-spacing: -3px;
   font-weight: bold;
+  font-size: 29px;
   color: rgb(30, 138, 134);
 }
-
+.nav-link {
+  font-size: 22px;
+}
 </style>
 
