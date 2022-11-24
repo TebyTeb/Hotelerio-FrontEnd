@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="box">
-      <div class="d-grid gap-2 d-md-block" id="menu">
+      <div class="d-grid gap-2 d-md-block" id="menu" >
         <ul class="nav">
           <li class="nav-item">
             <a :style="ShowStandardRoom ? 'color: gray' : ''" @click.prevent="show('standard')"
@@ -14,18 +14,18 @@
             <a :style="ShowSuiteRoom ? 'color: gray' : ''" @click.prevent="show('suite')" class="nav-link">Suite</a>
           </li>
         </ul>
-      </div>
-      <div>
-        <StandarRoomCard :class="{ jump: ShowStandardRoom }" />
-      </div>
-
-      <div>
-        <DoubleRoomCard :class="{ jump: ShowDoubleRoom }" />
+        <div class="foo">
+          <StandarRoomCard :class="{ jump: ShowStandardRoom }" />
+          <DoubleRoomCard :class="{ jump: ShowDoubleRoom }"/>
+          <SuiteRoomCard :class="{ jump: ShowSuiteRoom }" />
+        </div>
       </div>
 
-      <div>
-        <SuiteRoomCard :class="{ jump: ShowSuiteRoom }" />
-      </div>
+  
+
+
+
+
     </div>
   </div>
 </template>
@@ -75,12 +75,19 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
 a:hover {
   cursor: pointer;
+  color: rgb(30, 138, 134);
 }
 
 a {
-  color: blue;
+  color: rgb(30, 138, 134);
 }
 
 .jump {
@@ -88,13 +95,9 @@ a {
 }
 
 #menu {
-  margin-left: 12px;
-  background-color: white;
-  width: 73%;
+  background-color: rgba(224, 237, 243, 0.8);
+  width: fit-content;
+  border-radius: 1rem;
 }
 
-.box {
-  padding-left: 200px;
-  padding-top: 50px;
-}
 </style>
