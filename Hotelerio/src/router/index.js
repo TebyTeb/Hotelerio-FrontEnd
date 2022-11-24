@@ -67,7 +67,7 @@ const router = createRouter({
       name: 'typeOfRoom',
       component: TypeOfRoom,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     }
   ]

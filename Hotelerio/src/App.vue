@@ -30,6 +30,8 @@ export default {
   flex-direction: column;
   height: 100%;
   min-height: 100vh;
+  //font-family: 'Poppins', sans-serif;
+  //color: rgb(67, 66, 66);
 }
 
 .router-view {
@@ -54,5 +56,12 @@ export default {
 .navbar {
   position: fixed;
   top: 0;
+}
+</style>
+
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(67, 66, 66);
 }
 </style>

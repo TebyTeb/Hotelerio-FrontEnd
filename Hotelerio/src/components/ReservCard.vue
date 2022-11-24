@@ -31,6 +31,7 @@ export default {
 <style scoped>
 .container {
   margin: 0 1rem;
+  min-width: fit-content;
 }
 .container h5 {
   text-align: center;

@@ -1,5 +1,5 @@
 <script setup>
-import PersonalButton from '../components/PersonalButton.vue'
+import { RouterLink } from 'vue-router';
 </script>
 
 <script>
@@ -15,14 +15,13 @@ export default {
     <br>
     <br>
     <h1>Personal Page</h1>
-    <div>
-      <PersonalButton text="Make a Reservation" link="checkAvailableRooms" />
-    </div>
-    <br>
-    <div>
-      <PersonalButton text="Type of Rooms" link="home" />
+    <div class="parent">
+      <RouterLink class="button round-4" :to="{name:'profile'}"> </RouterLink>
+      <RouterLink class="button round-5" :to="{name:'checkAvailableRooms'}"> </RouterLink>
+      <RouterLink class="button round-6" :to="{name:'typeOfRoom'}"> </RouterLink>
     </div>
   </div>
+
 </template>
 
 <style scoped>
@@ -30,5 +29,63 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+* {
+  font-family: sans-serif;
+}
+
+body {
+  background: grey
+}
+
+.parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.parent .button {
+  background-color: grey;
+  color: white;
+  border: none;
+  padding: 5px;
+  font-size: 31px;
+  height: 100px;
+  width: 100px;
+  box-shadow: 0 2px 4px darkslategray;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.parent .button:active {
+  background-color: #48abe0;
+  box-shadow: 0 0 2px darkslategray;
+  transform: translateY(2px);
+}
+
+.parent .button:not(:first-child) {
+  margin-top: 10px;
+}
+
+.round-4 {
+  border-radius: 70%;
+  background-image: url(../assets/images/icons/user.png);
+  background-size: 100px;
+  background-repeat: no-repeat;
+}
+
+.round-5 {
+  border-radius: 70%;
+  background-image: url(../assets/images/icons/calendar.png);
+  background-size: 100px;
+  background-repeat: no-repeat;
+}
+
+.round-6 {
+  border-radius: 70%;
+  background-image: url(../assets/images/icons/bed.png);
+  background-size: 100px;
+  background-repeat: no-repeat;
 }
 </style>

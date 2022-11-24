@@ -2,7 +2,7 @@
   <header>
     <nav class="navbar navbar-expand " v-if="!store.isLoggedIn">
       <div class="container-fluid">
-        <h3 class="navbar-brand">HotelerioApp</h3>
+        <h3><RouterLink :to="{ name: 'home' }" class="navbar-brand">HOTELERIO</RouterLink></h3>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <li class="nav-item dropdown" style="list-style-type: none">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -11,22 +11,25 @@
             <ul class="dropdown-menu">
               <li><RouterLink :to="{ name: 'home' }" class="dropdown-item">Home</RouterLink></li>
               <li><RouterLink :to="{ name: 'auth' }" class="dropdown-item">Register</RouterLink></li>
-              <li class="dropdown-item">Types of Rooms</li>
+              <li ><RouterLink :to="{ name: 'typeOfRoom' }" class="dropdown-item">Types of Rooms</RouterLink></li>
             </ul>
           </li>
         </div>
       </div>
     </nav>
 
-    <nav class="navbar navbar-expand " v-else>
+    <nav v-else class="navbar navbar-expand ">
       <div class="container-fluid">
-        <h3 class="navbar-brand">HotelerioApp</h3>
+        <h3><RouterLink :to="{ name: 'home' }" class="navbar-brand">HOTELERIO</RouterLink></h3>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <li class="nav-item dropdown" style="list-style-type: none;">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Menu
             </a>
             <ul class="dropdown-menu">
+              <li>
+                <RouterLink :to="{ name: 'home' }" class="dropdown-item">Home</RouterLink>
+              </li>
               <li>
                 <RouterLink :to="{ name: 'profile' }" class="dropdown-item">My Profile</RouterLink>
               </li>
@@ -53,7 +56,6 @@
           </li>
         </div>
         Welcome {{ store.userEmail }}
-        <button @click="logout">Logout</button>
       </div>
     </nav>
   </header>
@@ -81,10 +83,21 @@ export default {
 <style lang="scss" scoped>
 header {
   z-index: 50;
-  height: 50px;
+  height: 80px;
   width: 100%;
   flex-shrink: 0;
-  background-color: grey;
+  background-color: rgb(224, 237, 243);
+  color: rgb(67, 66, 66);
 }
+.navbar {
+  width: 100%;
+}
+.navbar-brand {
+  font-style: normal;
+  letter-spacing: -1px;
+  font-weight: bold;
+  color: rgb(30, 138, 134);
+}
+
 </style>
 

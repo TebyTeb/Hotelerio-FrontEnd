@@ -6,7 +6,7 @@ import { RouterLink } from 'vue-router'
   <div id="container" class="img-fluid position-relative">
     <div id="welcome" class="card">
       <h1 class="card-title">HOTELERIO</h1>
-      <p class="card-text" style="font-weight:lighter">Welcome to Hotelerio, a comfortable and quiet hotel in Las
+      <p class="card-text">Welcome to Hotelerio, a comfortable and quiet hotel in Las
         Palmas, in a beautiful
         location near the shore, perfect for any kind of getaway.</p>
       <RouterLink :to="{ name: 'auth' }"><button type="button" class="btn btn-primary btn-lg">Access</button>
@@ -36,29 +36,33 @@ export default {
 }
 
 #container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows:auto;
-  /* background-image: url('../assets/images/reception/reecpcion.jpg'); */
+  display: flex;
+  justify-content: center;
   background-size: cover;
   background-position: center;
   width: 100vw;
-  height: 80vh;
+  height: auto;
 }
 
 .card-title{
-  font-family: 'Caligo';
-  src: url('../assets/fonts/font_Caligo1.0.ttf');
   font-style: normal;
-  font-weight: normal;
+  letter-spacing: -1px;
+  font-weight: 500;
+  color: rgb(67, 66, 66);
 }
-.card-body {
-  color: black
-}
+
 .card{
   border: 1px solid grey;
   border-radius: 1rem;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(224, 237, 243, 0.8);
+}
+.btn-primary {
+  background-color: rgb(30, 138, 134);
+  border: 1px solid rgb(30, 138, 134);
+}
+.card-text {
+  text-align: justify;
+  font-weight: 400;
 }
 </style>
 

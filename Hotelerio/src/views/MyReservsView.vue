@@ -1,19 +1,15 @@
 <template>
-  <div class="container">
-    <div class="main">
-      <br>
-      <br>
-      <h1>My Reservations</h1>
-      <div v-if="reservations.length !== 0" class="reserv-info">
-        <ReservCard 
-          v-for="(reserv, idx) in reservations"
-          :key="idx" 
-          :reserv="reserv"
-          :count="reservations.indexOf(reserv)" 
-        />
-      </div>
-      <div v-else class="no-reserve">
-        <h4>No reservations yet</h4>
+  <div class="ppal">
+    <div class="container">
+      <div class="main">
+        <h1>My Reservations</h1>
+        <div v-if="reservations.length !== 0" class="reserv-info">
+          <ReservCard v-for="(reserv, idx) in reservations" :key="idx" :reserv="reserv"
+            :count="reservations.indexOf(reserv)" />
+        </div>
+        <div v-else class="no-reserve">
+          <h4>No reservations yet</h4>
+        </div>
       </div>
     </div>
   </div>
@@ -48,10 +44,14 @@ export default {
 </script>
 
 <style scoped>
+.ppal {
+  display: flex;
+  align-items: center;
+}
 .container {
   border: 1px solid grey;
   border-radius: 1rem;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(224, 237, 243, 0.8);
   padding: 2rem;
 }
 
@@ -59,6 +59,10 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.main h1 {
+  margin-bottom: 2rem;
 }
 
 .reserv-info {
