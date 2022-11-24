@@ -43,7 +43,7 @@ export default {
   background-size: cover;
   background-position: center;
   width: 100vw;
-  height: 80vh;
+  height: auto;
 }
 
 .card-title{
