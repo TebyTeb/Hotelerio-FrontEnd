@@ -1,9 +1,6 @@
 <template>
     <div class="container">
       <div class="card" style="width: 50rem;">
-        <br>
-        <br>
-        <h1>Suite</h1>
         <div id="carouselExampleControls3" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -26,11 +23,12 @@
           </button>
         </div>
         <div> 
-        <h3>21m²</h3>
-        <h3>Big bed</h3>
-        <h3>Wifi-Tv</h3>
-        <h3>BathRoom</h3>
-        <h3>Desk</h3>
+        <h1>Suite</h1>  
+        <h5>21m²</h5>
+        <h5>Big bed</h5>
+        <h5>Wifi-Tv</h5>
+        <h5>BathRoom</h5>
+        <h5>Desk</h5>
         </div>
       </div>
     </div>

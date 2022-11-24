@@ -1,27 +1,30 @@
 <template>
   <div class="container">
-    <div class="container-fluid row">
-      <div class="col-sm-4 col-xs well">
-        <a href="#info1" @click.prevent="show('standard')" class="inf">Standard</a>
-      </div>
-      <div class="col-sm-4 col-xs well">
-        <a href="#info2" @click.prevent="show('double')" class="inf">Doble</a>
-      </div>
-      <div class="col-sm-4 col-xs well">
-        <a href="#info3" @click.prevent="show('suite')" class="inf">Suite</a>
-      </div>
+    <div class="box">
+        <div class="d-grid gap-2 d-md-block">
+          <ul class="nav">
+             <li class="nav-item">
+                <a @click.prevent="show('standard')" class="nav-link active" >Standard</a>
+             </li>
+            <li class="nav-item">
+                <a @click.prevent="show('double')" class="nav-link" >Double</a>
+             </li>
+            <li class="nav-item">
+                <a @click.prevent="show('suite')"  class="nav-link">Suite</a>
+            </li>
+           </ul>
     </div>
+      <div>
+        <StandarRoomCard :class="{ jump: ShowStandardRoom }" />
+      </div>
 
-    <div >
-      <StandarRoomCard id="info1"  :class="{jump: ShowStandardRoom}"/>
-    </div>
+      <div>
+        <DoubleRoomCard :class="{ jump: ShowDoubleRoom }" />
+      </div>
 
-    <div>
-      <DoubleRoomCard id="info2" :class="{jump: ShowDoubleRoom}"/>
-    </div>
-
-    <div>
-      <SuiteRoomCard id="info3" :class="{jump: ShowSuiteRoom}"/>
+      <div>
+        <SuiteRoomCard :class="{ jump: ShowSuiteRoom }" />
+      </div>
     </div>
   </div>
 </template>
@@ -35,43 +38,51 @@ export default {
   components: {
     StandarRoomCard,
     DoubleRoomCard,
-    SuiteRoomCard
+    SuiteRoomCard,
   },
-  data(){
-    return{
-        ShowStandardRoom: true,
-        ShowDoubleRoom:true,
-        ShowSuiteRoom:true,
-    }  
+  data() {
+    return {
+      ShowStandardRoom: true,
+      ShowDoubleRoom: true,
+      ShowSuiteRoom: true,
+    };
   },
-  methods:{
-    show: function(flag){
-            switch (flag){
-                case 'standard':
-                    this.ShowStandardRoom = false
-                    this.ShowDoubleRoom = true
-                    this.ShowSuiteRoom = true
-                    break
-                case 'double':
-                    this.ShowStandardRoom = true
-                    this.ShowDoubleRoom = false
-                    this.ShowSuiteRoom = true
-                    break
-                case 'suite':
-                    this.ShowStandardRoom = true
-                    this.ShowDoubleRoom = true
-                    this.ShowSuiteRoom = false
-                    break
-            }
-
-    }
-        
-}
+  methods: {
+    show: function (flag) {
+      switch (flag) {
+        case "standard":
+          this.ShowStandardRoom = false;
+          this.ShowDoubleRoom = true;
+          this.ShowSuiteRoom = true;
+          break;
+        case "double":
+          this.ShowStandardRoom = true;
+          this.ShowDoubleRoom = false;
+          this.ShowSuiteRoom = true;
+          break;
+        case "suite":
+          this.ShowStandardRoom = true;
+          this.ShowDoubleRoom = true;
+          this.ShowSuiteRoom = false;
+          break;
+      }
+    },
+  },
 };
 </script>
 
 <style scoped>
-.jump{
-    display: none;
+a:hover{
+  cursor:pointer;
+}
+.jump {
+  display: none;
+}
+#menu {
+  justify-content: space-evenly;
+}
+.box{
+padding-left:200px;
+padding-top: 50px;
 }
 </style>
