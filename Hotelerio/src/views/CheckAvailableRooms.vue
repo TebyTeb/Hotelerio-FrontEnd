@@ -1,79 +1,121 @@
 <template>
-  <div class="container">
-    <div class="checkRooms main justify-content-center align-items-center ">
-      <br>
-      <br>
-      <h1>Make a Reservation</h1>
-      <form>
-        <label>
-          CheckIn
-          <input type="date" v-model="checkin">
-        </label>
-        <label class="input">
-          CheckOut
-          <input type="date" v-model="checkout">
-        </label>
-        <button @click.prevent="searchRooms()" type="button" class="btn btn-primary">Search Rooms</button>
-      </form>
+  <div class="ppal">
+    <div class="container">
+      <div class="checkRooms main justify-content-center align-items-center">
+        <br />
+        <br />
+        <h1>Make a Reservation</h1>
+        <form>
+          <label>
+            CheckIn
+            <input type="date" v-model="checkin" />
+          </label>
+          <label class="input">
+            CheckOut
+            <input type="date" v-model="checkout" />
+          </label>
+          <button
+            @click.prevent="searchRooms()"
+            type="button"
+            class="btn btn-primary"
+          >
+            Search Rooms
+          </button>
+        </form>
 
-      <div class="box" v-if="searched">
-        <div class="rooms">
-          <p class="name">Number of Standard Rooms available: {{ standards.length }}</p>
-          <RouterLink :to="{ name: 'confirm' }">
-            <button class="btn btn-secondary" :class="{ hidden: standards.length === 0 }" @click="sendRoom(standards[0])">Reserve One</button>
-          </RouterLink>
-        </div>
+        <div class="box" v-if="searched">
+          <div class="rooms">
+            <p class="name">
+              Number of Standard Rooms available: {{ standards.length }}
+            </p>
+            <RouterLink :to="{ name: 'confirm' }">
+              <button
+                class="btn btn-secondary"
+                :class="{ hidden: standards.length === 0 }"
+                @click="sendRoom(standards[0])"
+              >
+                Reserve One
+              </button>
+            </RouterLink>
+          </div>
 
-        <div class="rooms">
-          <p class="name">Number of Double Rooms available: {{ doubles.length }}</p>
-          <RouterLink :to="{ name: 'confirm' }">
-          <button class="btn btn-secondary" :class="{ hidden: doubles.length === 0 }" @click="sendRoom(doubles[0])">Reserve One</button>
-          </RouterLink>
-        </div>
+          <div class="rooms">
+            <p class="name">
+              Number of Double Rooms available: {{ doubles.length }}
+            </p>
+            <RouterLink :to="{ name: 'confirm' }">
+              <button
+                class="btn btn-secondary"
+                :class="{ hidden: doubles.length === 0 }"
+                @click="sendRoom(doubles[0])"
+              >
+                Reserve One
+              </button>
+            </RouterLink>
+          </div>
 
-        <div class="rooms">
-          <p class="name">Number of Suite Rooms available: {{ suites.length }}</p>
-          <RouterLink :to="{ name: 'confirm' }">
-          <button class="btn btn-secondary" :class="{ hidden: suites.length === 0 }" @click="sendRoom(suites[0])">Reserve One</button>
-          </RouterLink>
+          <div class="rooms">
+            <p class="name">
+              Number of Suite Rooms available: {{ suites.length }}
+            </p>
+            <RouterLink :to="{ name: 'confirm' }">
+              <button
+                class="btn btn-secondary"
+                :class="{ hidden: suites.length === 0 }"
+                @click="sendRoom(suites[0])"
+              >
+                Reserve One
+              </button>
+            </RouterLink>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-  
+
 <script>
-import API from '../services/api'
-import { RouterLink } from 'vue-router'
-import { useReservationStore } from '../stores/store'
+import API from "../services/api";
+import { RouterLink } from "vue-router";
+import { useReservationStore } from "../stores/store";
 export default {
   data() {
     return {
-      checkin: '',
-      checkout: '',
+      checkin: "",
+      checkout: "",
       suites: [],
       doubles: [],
       standards: [],
       searched: false,
-      store: useReservationStore()
-    }
+      store: useReservationStore(),
+    };
   },
   methods: {
     async searchRooms() {
-      const response = await API.getAvailableRooms(this.checkin, this.checkout)
-      this.suites = response.filter(el => { return el.typeOfRoom === 'Suite' })
-      this.doubles = response.filter(el => { return el.typeOfRoom === 'Double' })
-      this.standards = response.filter(el => { return el.typeOfRoom === 'Standard' })
-      this.searched = true
+      const response = await API.getAvailableRooms(this.checkin, this.checkout);
+      this.suites = response.filter((el) => {
+        return el.typeOfRoom === "Suite";
+      });
+      this.doubles = response.filter((el) => {
+        return el.typeOfRoom === "Double";
+      });
+      this.standards = response.filter((el) => {
+        return el.typeOfRoom === "Standard";
+      });
+      this.searched = true;
     },
-    sendRoom({ _id, typeOfRoom }){
-      this.store.setRoomInfo(typeOfRoom, this.checkin, this.checkout, _id)
-    }
-  }
-}
+    sendRoom({ _id, typeOfRoom }) {
+      this.store.setRoomInfo(typeOfRoom, this.checkin, this.checkout, _id);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
+.ppal {
+  display: flex;
+  align-items: center;
+}
 .checkRooms {
   display: flex;
 
@@ -86,7 +128,6 @@ export default {
   padding: 2rem;
   background-color: rgba(255, 255, 255, 0.8);
   justify-content: center;
-  padding: 2rem;
 }
 
 .rooms {
@@ -107,12 +148,11 @@ export default {
   flex-direction: column;
   width: 60%;
   padding: 1rem 3rem;
-
 }
 
 .btn-primary,
 .input {
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 
 .hidden {
