@@ -16,7 +16,7 @@
       <div class="buttons">
         <button v-if="reservDone === false" class="btn btn-danger" @click="clearReserv">CANCEL</button>
         <button v-if="reservDone === false" class="btn btn-primary" @click="createReserv">CONFIRM</button>
-        <RouterLink v-else :to="{name: 'personal'}" class="btn btn-primary">CHECK RESERVATION</RouterLink>
+        <RouterLink v-else :to="{name: 'myReservations'}" class="btn btn-primary">CHECK RESERVATION</RouterLink>
       </div>
     </div>
   </div>
