@@ -81,6 +81,7 @@ export default {
 
 <style lang="scss" scoped>
 header {
+  z-index: 50;
   height: 50px;
   width: 100%;
   flex-shrink: 0;

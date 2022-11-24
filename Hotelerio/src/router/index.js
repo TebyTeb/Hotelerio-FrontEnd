@@ -6,6 +6,8 @@ import PersonalView from '../views/PersonalView.vue'
 import ProfileView from '../views/ProfileView.vue'
 import ConfirmReserv from '../views/ConfirmReserv.vue'
 import MyReservsView from '../views/MyReservsView.vue'
+import TypeOfRoom from '../views/TypeOfRoom.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -56,6 +58,14 @@ const router = createRouter({
       path: '/my-reservations',
       name: 'myReservations',
       component: MyReservsView,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/type-of-room',
+      name: 'typeOfRoom',
+      component: TypeOfRoom,
       meta: {
         requiresAuth: true
       }
