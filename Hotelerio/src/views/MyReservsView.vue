@@ -4,15 +4,15 @@
       <br>
       <br>
       <h1>My Reservations</h1>
-      <div v-if="reservDone === true" class="reserv-info">
-        <h4>Name: <span style="font-weight: 400;">{{ profile.name }}</span></h4>
-        <h4>Surname: <span style="font-weight: 400;">{{ profile.surname }}</span></h4>
-        <h4>ID Num: <span style="font-weight: 400;">{{ profile.identification }}</span></h4>
-        <h4>CheckIn: <span style="font-weight: 400;">{{ reservation.checkin }}</span></h4>
-        <h4>CheckOut: <span style="font-weight: 400;">{{ reservation.checkout }}</span></h4>
-        <h4>Room Type: <span style="font-weight: 400;">{{ reservation }}</span></h4>
+      <div v-if="reservations.length !== 0" class="reserv-info">
+        <ReservCard 
+          v-for="(reserv, idx) in reservations"
+          :key="idx" 
+          :reserv="reserv"
+          :count="reservations.indexOf(reserv)" 
+        />
       </div>
-      <div class="no-reserve">
+      <div v-else class="no-reserve">
         <h4>No reservations yet</h4>
       </div>
     </div>
@@ -20,26 +20,29 @@
 </template>
 
 <script>
+import ReservCard from '../components/ReservCard.vue'
 import api from '../services/api'
 import { useReservationStore, useAuthStore } from '../stores/store'
 export default {
+  components: {
+    ReservCard
+  },
   data() {
     return {
 
       profile: {},
-      reservation: {},
-    
+      reservations: [],
+
       storeReserv: useReservationStore(),
       storeAuth: useAuthStore(),
-      reservDone: false
     }
   },
-  methods: {
-    
+  computed: {
+
   },
   async created() {
     this.profile = await api.getProfile(this.storeAuth.userEmail)
-    this.reservation = await api.getReservs(this.profile._id)
+    this.reservations = await api.getReservs(this.profile._id)
   }
 }
 </script>
@@ -60,13 +63,8 @@ export default {
 
 .reserv-info {
   margin: 1rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, auto);
+  display: flex;
   justify-content: space-around;
-  grid-auto-flow: row;
-  flex-wrap: wrap;
-  width: 65%;
 }
 
 .no-reserv {

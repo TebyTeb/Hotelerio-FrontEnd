@@ -9,10 +9,9 @@
               Menu
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" :href="'/'">Home</a></li>
-              <li><a class="dropdown-item" :href="'/auth'">Register</a></li>
-              <li><a class="dropdown-item">Types of rooms</a></li>
-              <li><a class="dropdown-item">Contact Info</a></li>
+              <li><RouterLink :to="{ name: 'home' }" class="dropdown-item">Home</RouterLink></li>
+              <li><RouterLink :to="{ name: 'auth' }" class="dropdown-item">Register</RouterLink></li>
+              <li class="dropdown-item">Types of Rooms</li>
             </ul>
           </li>
         </div>

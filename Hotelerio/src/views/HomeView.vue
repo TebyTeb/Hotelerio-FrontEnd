@@ -9,7 +9,7 @@ import { RouterLink } from 'vue-router'
       <p class="card-text" style="font-weight:lighter">Welcome to Hotelerio, a comfortable and quiet hotel in Las
         Palmas, in a beautiful
         location near the shore, perfect for any kind of getaway.</p>
-      <RouterLink :to="{ name: 'auth' }"><button type="button" class="btn btn-primary btn-lg">Register</button>
+      <RouterLink :to="{ name: 'auth' }"><button type="button" class="btn btn-primary btn-lg">Access</button>
       </RouterLink>
       <br>
       <button type="button" class="btn btn-secondary">Types of rooms</button>
