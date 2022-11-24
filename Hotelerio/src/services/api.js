@@ -56,11 +56,24 @@ async function createReserv(reserv) {
   return response.data
 }
 
+async function getReservs(client) {
+  const response = await API.get('/reserv', {
+    headers: {
+      token: localStorage.getItem('token')
+    },
+    params: {
+      client
+    }
+  })
+  return response.data
+}
+
 
 export default {
   signup,
   login,
   getAvailableRooms,
   getProfile,
-  createReserv
+  createReserv,
+  getReservs
 }
