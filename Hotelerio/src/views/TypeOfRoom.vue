@@ -1,16 +1,16 @@
 <template>
   <div class="container">
     <div class="box">
-        <div class="d-grid gap-2 d-md-block">
+        <div class="d-grid gap-2 d-md-block" id="menu">
           <ul class="nav">
              <li class="nav-item">
-                <a @click.prevent="show('standard')" class="nav-link active" >Standard</a>
+                <a :style="ShowStandardRoom ? 'color: gray' : ''" @click.prevent="show('standard')" class="nav-link active" >Standard</a>
              </li>
             <li class="nav-item">
-                <a @click.prevent="show('double')" class="nav-link" >Double</a>
+                <a :style="ShowDoubleRoom ? 'color: gray' : ''"  @click.prevent="show('double')" class="nav-link" >Double</a>
              </li>
             <li class="nav-item">
-                <a @click.prevent="show('suite')"  class="nav-link">Suite</a>
+                <a :style="ShowSuiteRoom ? 'color: gray' : ''" @click.prevent="show('suite')"  class="nav-link">Suite</a>
             </li>
            </ul>
     </div>
@@ -65,7 +65,9 @@ export default {
           this.ShowDoubleRoom = true;
           this.ShowSuiteRoom = false;
           break;
-      }
+      };
+      
+
     },
   },
 };
@@ -75,11 +77,18 @@ export default {
 a:hover{
   cursor:pointer;
 }
+
+a{
+    color:blue;
+}
+
 .jump {
   display: none;
 }
 #menu {
-  justify-content: space-evenly;
+  margin-left: 12px;
+  background-color: white;
+  width: 73%;
 }
 .box{
 padding-left:200px;

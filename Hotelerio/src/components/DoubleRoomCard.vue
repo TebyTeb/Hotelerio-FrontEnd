@@ -24,6 +24,7 @@
         <div> 
           <h1>Double</h1>
             <h5>21m²</h5>
+            <h5>2 rooms</h5>
             <h5>Big bed</h5>
             <h5>Wifi-Tv</h5>
             <h5>BathRoom</h5>
