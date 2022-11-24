@@ -4,13 +4,16 @@
       <br>
       <br>
       <h1>My Reservations</h1>
-      <div class="reserv-info">
+      <div v-if="reservDone === true" class="reserv-info">
         <h4>Name: <span style="font-weight: 400;">{{ profile.name }}</span></h4>
         <h4>Surname: <span style="font-weight: 400;">{{ profile.surname }}</span></h4>
         <h4>ID Num: <span style="font-weight: 400;">{{ profile.identification }}</span></h4>
-        <h4>CheckIn: <span style="font-weight: 400;">{{ roomInfo.checkin }}</span></h4>
-        <h4>CheckOut: <span style="font-weight: 400;">{{ roomInfo.checkout }}</span></h4>
-        <h4>Room Type: <span style="font-weight: 400;">{{ roomInfo.type }}</span></h4>
+        <h4>CheckIn: <span style="font-weight: 400;">{{ reservation.checkin }}</span></h4>
+        <h4>CheckOut: <span style="font-weight: 400;">{{ reservation.checkout }}</span></h4>
+        <h4>Room Type: <span style="font-weight: 400;">{{ reservation }}</span></h4>
+      </div>
+      <div class="no-reserve">
+        <h4>No reservations yet</h4>
       </div>
     </div>
   </div>
@@ -18,44 +21,25 @@
 
 <script>
 import api from '../services/api'
-import { RouterLink } from 'vue-router'
 import { useReservationStore, useAuthStore } from '../stores/store'
 export default {
   data() {
     return {
-      roomInfo: {},
+
       profile: {},
       reservation: {},
-      createdReserv: {},
+    
       storeReserv: useReservationStore(),
       storeAuth: useAuthStore(),
       reservDone: false
     }
   },
   methods: {
-    async createReserv() {
-      try {
-        this.reservation = {
-          room: this.roomInfo.id,
-          checkin: this.roomInfo.checkin,
-          checkout: this.roomInfo.checkout
-        }
-        const response = await api.createReserv(this.reservation)
-        this.createdReserv = response
-        this.reservDone = true
-      } catch (error) {
-        return { error: error.message }
-      }
-    },
-    clearReserv() {
-      this.reservation = {}
-      this.roomInfo = {}
-      this.$router.push({ name: 'checkAvailableRooms' })
-    }
+    
   },
   async created() {
     this.profile = await api.getProfile(this.storeAuth.userEmail)
-    this.roomInfo = this.storeReserv.getRoomInfo
+    this.reservation = await api.getReservs(this.profile._id)
   }
 }
 </script>
@@ -83,6 +67,13 @@ export default {
   grid-auto-flow: row;
   flex-wrap: wrap;
   width: 65%;
+}
+
+.no-reserv {
+  margin: 1rem;
+  width: 65%;
+  align-items: center;
+  text-align: center;
 }
 
 .buttons {
