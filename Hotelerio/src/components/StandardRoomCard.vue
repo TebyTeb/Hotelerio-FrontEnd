@@ -1,8 +1,8 @@
 <template>
     <div class="container">
+      <div class="card" style="width: 50rem;">
         <br>
         <br>
-        <div class="card" style="width: 50rem;">
         <h1> Standard</h1>
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
