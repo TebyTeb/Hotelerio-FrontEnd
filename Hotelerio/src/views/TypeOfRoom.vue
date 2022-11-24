@@ -2,26 +2,26 @@
   <div class="container">
     <div class="container-fluid row">
       <div class="col-sm-4 col-xs well">
-        <a href="#info1" class="inf">Standard</a>
+        <a href="#info1" @click="show" class="inf">Standard</a>
       </div>
       <div class="col-sm-4 col-xs well">
-        <a href="#info2" class="inf">Doble</a>
+        <a href="#info2" @click="show" class="inf">Doble</a>
       </div>
       <div class="col-sm-4 col-xs well">
-        <a href="#info3" class="inf">Suite</a>
+        <a href="#info3" @click="show" class="inf">Suite</a>
       </div>
     </div>
 
     <div >
-      <StandarRoomCard />
+      <StandarRoomCard id="info1"/>
     </div>
 
     <div>
-      <DoubleRoomCard />
+      <DoubleRoomCard id="info2" />
     </div>
 
     <div>
-      <SuiteRoomCard />
+      <SuiteRoomCard id="info3"/>
     </div>
   </div>
 </template>
@@ -45,7 +45,11 @@ export default {
     }  
   },
   methods:{
-    
+    show: function(){
+        if(!hide){
+            ShowSRoom:true
+        }
+    }
         
 }
 };
