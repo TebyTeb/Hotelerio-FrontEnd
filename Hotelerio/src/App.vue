@@ -31,6 +31,7 @@ export default {
   flex-direction: column;
   height: 100%;
   min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
 }
 
 .router-view {
