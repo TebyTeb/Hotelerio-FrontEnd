@@ -28,20 +28,28 @@
               Menu
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" :href="'/profile'">My Profile</a></li>
-              <li><a class="dropdown-item">My Reservation</a></li>
+              <li>
+                <RouterLink :to="{ name: 'profile' }" class="dropdown-item">My Profile</RouterLink>
+              </li>
+              <li>
+                <RouterLink :to="{ name: 'myReservations' }" class="dropdown-item">My Reservations</RouterLink>
+              </li>
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" :href="'/personal'">Personal Page</a></li>
-              <li><a class="dropdown-item">Types of Rooms</a></li>
-              <li><a class="dropdown-item" :href="'/checkAvailableRooms'">Make a Reservation</a></li>
-              <li><a class="dropdown-item">Contact Info</a></li>
+              <li>
+                <RouterLink :to="{ name: 'personal' }" class="dropdown-item">Personal Page</RouterLink>
+              </li>
+              <li>
+                <RouterLink :to="{ name: 'profile' }" class="dropdown-item">Types of Rooms</RouterLink>
+              </li>
+              <li>
+                <RouterLink :to="{ name: 'checkAvailableRooms' }" class="dropdown-item">Make a Reservation</RouterLink>
+              </li>
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" @click="logout">Log Out</a></li> <!-- No FUNCIONA  -->
-
+              <li><a class="dropdown-item" @click="logout">Log Out</a></li>
             </ul>
           </li>
         </div>
