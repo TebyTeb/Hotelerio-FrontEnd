@@ -64,5 +64,8 @@ export default {
 body {
   font-family: 'Poppins', sans-serif;
   color: rgb(67, 66, 66);
+  /* font-size: calc(16px + 1vw);
+  line-height: calc(1.1em + 0.5vw); */
 }
 </style>
+

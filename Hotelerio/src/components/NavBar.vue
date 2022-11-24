@@ -55,7 +55,9 @@
             </ul>
           </li>
         </div>
-        Welcome {{ store.userEmail }}
+        <span>
+          Welcome {{ store.userEmail }}
+        </span>
       </div>
     </nav>
   </header>
