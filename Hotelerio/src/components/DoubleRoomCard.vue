@@ -4,7 +4,7 @@
         <div class="card" style="width: 50rem;">
         <br>
         <br>
-        <h1>Doble</h1>
+        <h1>Double</h1>
         <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">

@@ -40,7 +40,7 @@
                 <RouterLink :to="{ name: 'personal' }" class="dropdown-item">Personal Page</RouterLink>
               </li>
               <li>
-                <RouterLink :to="{ name: 'profile' }" class="dropdown-item">Types of Rooms</RouterLink>
+                <RouterLink :to="{ name: 'typeOfRoom' }" class="dropdown-item">Types of Rooms</RouterLink>
               </li>
               <li>
                 <RouterLink :to="{ name: 'checkAvailableRooms' }" class="dropdown-item">Make a Reservation</RouterLink>
