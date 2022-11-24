@@ -1,19 +1,20 @@
 <template>
   <div class="container">
     <div class="box">
-        <div class="d-grid gap-2 d-md-block" id="menu">
-          <ul class="nav">
-             <li class="nav-item">
-                <a :style="ShowStandardRoom ? 'color: gray' : ''" @click.prevent="show('standard')" class="nav-link active" >Standard</a>
-             </li>
-            <li class="nav-item">
-                <a :style="ShowDoubleRoom ? 'color: gray' : ''"  @click.prevent="show('double')" class="nav-link" >Double</a>
-             </li>
-            <li class="nav-item">
-                <a :style="ShowSuiteRoom ? 'color: gray' : ''" @click.prevent="show('suite')"  class="nav-link">Suite</a>
-            </li>
-           </ul>
-    </div>
+      <div class="d-grid gap-2 d-md-block" id="menu">
+        <ul class="nav">
+          <li class="nav-item">
+            <a :style="ShowStandardRoom ? 'color: gray' : ''" @click.prevent="show('standard')"
+              class="nav-link active">Standard</a>
+          </li>
+          <li class="nav-item">
+            <a :style="ShowDoubleRoom ? 'color: gray' : ''" @click.prevent="show('double')" class="nav-link">Double</a>
+          </li>
+          <li class="nav-item">
+            <a :style="ShowSuiteRoom ? 'color: gray' : ''" @click.prevent="show('suite')" class="nav-link">Suite</a>
+          </li>
+        </ul>
+      </div>
       <div>
         <StandarRoomCard :class="{ jump: ShowStandardRoom }" />
       </div>
@@ -42,7 +43,7 @@ export default {
   },
   data() {
     return {
-      ShowStandardRoom: true,
+      ShowStandardRoom: false,
       ShowDoubleRoom: true,
       ShowSuiteRoom: true,
     };
@@ -66,7 +67,7 @@ export default {
           this.ShowSuiteRoom = false;
           break;
       };
-      
+
 
     },
   },
@@ -74,24 +75,26 @@ export default {
 </script>
 
 <style scoped>
-a:hover{
-  cursor:pointer;
+a:hover {
+  cursor: pointer;
 }
 
-a{
-    color:blue;
+a {
+  color: blue;
 }
 
 .jump {
   display: none;
 }
+
 #menu {
   margin-left: 12px;
   background-color: white;
   width: 73%;
 }
-.box{
-padding-left:200px;
-padding-top: 50px;
+
+.box {
+  padding-left: 200px;
+  padding-top: 50px;
 }
 </style>

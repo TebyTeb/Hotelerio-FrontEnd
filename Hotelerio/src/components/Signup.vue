@@ -24,12 +24,12 @@
 
           <label for="inputEmail" class="sr-only">Email address</label>
           <input type="text" id="inputEmail" class="form-control mb-1"
-            v-bind:class="{ 'is-invalid': !emailValidOrEmpty, 'is-valid': emailValid }" placeholder="Email address"
-            autofocus="" v-model="newUser.email" />
+            v-bind:class="{ 'is-invalid': !emailValidOrEmpty, 'is-valid': emailValid }" autofocus=""
+            v-model="newUser.email" />
 
           <label for="inputPassword" class="sr-only">Password</label>
           <input type="password" id="inputPassword" class="form-control mb-1"
-            v-bind:class="{ 'is-invalid': !passwordValidOrEmpty, 'is-valid': passwordValid }" placeholder="Password"
+            v-bind:class="{ 'is-invalid': !passwordValidOrEmpty, 'is-valid': passwordValid }"
             v-model="newUser.password" />
           <p class="small" v-bind:class="{
             'text-danger': passwdStrength === 1, 'text-warning': passwdStrength === 2,
@@ -41,12 +41,13 @@
           <label for="inputPassword2" class="sr-only">Confirm Password</label>
           <input type="password" id="inputPassword2" class="form-control mb-1"
             v-bind:class="{ 'is-invalid': !passwordsEqualOrEmpty, 'is-valid': passwordsEqualNotEmpty }"
-            placeholder="Password" v-model="password2" />
+            v-model="password2" />
 
-          <button class="btn btn-lg btn-primary btn-block mt-3" v-on:click.prevent="signUp">
-            Create account
-          </button>
-
+          <div class="button">
+            <button class="btn btn-lg btn-primary btn-block mt-3" v-on:click.prevent="signUp">
+              Create account
+            </button>
+          </div>
           <div class="toggle-form">
             <a href="#" v-on:click="toggleForm">I already have an account</a>
           </div>
@@ -159,9 +160,24 @@ export default {
 
 <style scoped>
 .container {
-  border: 1px solid grey;
   border-radius: 1rem;
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(224, 237, 243, 0.8);
+}
+.form-signup>h1 {
+  text-align: center;
+}
+.button, .toggle-form {
+  text-align: center;
+}
+.toggle-form {
+  margin-top: 1rem;
+}
+.toggle-form>a {
+  color: rgb(30, 138, 134);
+}
+.btn-primary {
+  background-color: rgb(30, 138, 134);
+  border: 1px solid rgb(30, 138, 134);
 }
 </style>

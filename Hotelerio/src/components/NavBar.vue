@@ -2,7 +2,7 @@
   <header>
     <nav class="navbar navbar-expand " v-if="!store.isLoggedIn">
       <div class="container-fluid">
-        <h3 class="navbar-brand">HotelerioApp</h3>
+        <h3><RouterLink :to="{ name: 'home' }" class="navbar-brand">HOTELERIO</RouterLink></h3>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <li class="nav-item dropdown" style="list-style-type: none">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -18,15 +18,18 @@
       </div>
     </nav>
 
-    <nav v-else class="navbar navbar-expand " style="border: 1px solid red;">
+    <nav v-else class="navbar navbar-expand ">
       <div class="container-fluid">
-        <h3 class="navbar-brand">HotelerioApp</h3>
+        <h3><RouterLink :to="{ name: 'home' }" class="navbar-brand">HOTELERIO</RouterLink></h3>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <li class="nav-item dropdown" style="list-style-type: none;">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Menu
             </a>
             <ul class="dropdown-menu">
+              <li>
+                <RouterLink :to="{ name: 'home' }" class="dropdown-item">Home</RouterLink>
+              </li>
               <li>
                 <RouterLink :to="{ name: 'profile' }" class="dropdown-item">My Profile</RouterLink>
               </li>
@@ -83,14 +86,17 @@ header {
   height: 80px;
   width: 100%;
   flex-shrink: 0;
-  background-color: rgb(243, 239, 224);
+  background-color: rgb(224, 237, 243);
   color: rgb(67, 66, 66);
 }
 .navbar {
   width: 100%;
 }
 .navbar-brand {
-  color: rgb(34, 163, 159);
+  font-style: normal;
+  letter-spacing: -1px;
+  font-weight: bold;
+  color: rgb(30, 138, 134);
 }
 
 </style>

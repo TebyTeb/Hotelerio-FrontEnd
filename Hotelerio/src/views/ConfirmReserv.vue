@@ -1,30 +1,29 @@
 <template>
-  <div class="container">
-    <br>
-    <br>
-    <div v-if="reservDone === false" class="main">
-      <h1>Confirm your Reservation</h1>
-      <div class="reserv-info">
-        <h4>Name: <span style="font-weight: 400;">{{ profile.name }}</span></h4>
-        <h4>Surname: <span style="font-weight: 400;">{{ profile.surname }}</span></h4>
-        <h4>ID Num: <span style="font-weight: 400;">{{ profile.identification }}</span></h4>
-        <h4>CheckIn: <span style="font-weight: 400;">{{ roomInfo.checkin }}</span></h4>
-        <h4>CheckOut: <span style="font-weight: 400;">{{ roomInfo.checkout }}</span></h4>
-        <h4>Room Type: <span style="font-weight: 400;">{{ roomInfo.type }}</span></h4>
+  <div class="ppal">
+    <div class="container">
+      <div v-if="reservDone === false" class="main">
+        <h1>Confirm your Reservation</h1>
+        <div class="reserv-info">
+          <h4>Name: <span style="font-weight: 400;">{{ profile.name }}</span></h4>
+          <h4>Surname: <span style="font-weight: 400;">{{ profile.surname }}</span></h4>
+          <h4>ID Num: <span style="font-weight: 400;">{{ profile.identification }}</span></h4>
+          <h4>CheckIn: <span style="font-weight: 400;">{{ roomInfo.checkin }}</span></h4>
+          <h4>CheckOut: <span style="font-weight: 400;">{{ roomInfo.checkout }}</span></h4>
+          <h4>Room Type: <span style="font-weight: 400;">{{ roomInfo.type }}</span></h4>
+        </div>
+        <div class="buttons">
+          <button class="btn btn-danger" @click="clearReserv">Cancel</button>
+          <button class="btn btn-primary" @click="createReserv">Confirm</button>
+        </div>
       </div>
-      <div class="buttons">
-        <button class="btn btn-danger" @click="clearReserv">CANCEL</button>
-        <button class="btn btn-primary" @click="createReserv">CONFIRM</button>
+
+      <div v-else class="main">
+        <h1>Reservation Confirmed</h1>
+        <div>
+          <RouterLink :to="{ name: 'myReservations' }" class="btn btn-primary">Check Reservation</RouterLink>
+        </div>
       </div>
     </div>
-
-    <div v-else class="main">
-      <h1>Reservation Confirmed</h1>
-      <div class="buttons">
-        <RouterLink :to="{ name: 'myReservations' }" class="btn btn-primary">CHECK RESERVATION</RouterLink>
-      </div>
-    </div>
-
   </div>
 </template>
 
@@ -73,10 +72,14 @@ export default {
 </script>
 
 <style scoped>
+.ppal {
+  display: flex;
+  align-items: center;
+}
 .container {
   border: 1px solid grey;
   border-radius: 1rem;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(224, 237, 243, 0.8);
   padding: 2rem;
 }
 
@@ -84,6 +87,10 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.main h1 {
+  margin-bottom: 2rem;
 }
 
 .reserv-info {
@@ -102,6 +109,11 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.btn-primary {
+  background-color: rgb(30, 138, 134);
+  border: 1px solid rgb(30, 138, 134);
 }
 
 .btn {

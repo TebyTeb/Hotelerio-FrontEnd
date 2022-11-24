@@ -1,20 +1,19 @@
 <template>
-  <div class="container">
-    <div class="checkRooms main justify-content-center align-items-center ">
-      <br>
-      <br>
-      <h1>Make a Reservation</h1>
-      <form>
-        <label>
-          CheckIn
-          <input type="date" class="form-control mb-2" v-model="checkin">
-        </label>
-        <label class="input">
-          CheckOut
-          <input type="date" class="form-control mb-2" v-model="checkout">
-        </label>
-        <button @click.prevent="searchRooms()" type="button" class="btn btn-primary">Search Rooms</button>
-      </form>
+  <div class="ppal">
+    <div class="container">
+      <div class="checkRooms main justify-content-center align-items-center ">
+        <h1>Make a Reservation</h1>
+        <form>
+          <label>
+            CheckIn
+            <input type="date" class="form-control mb-2" v-model="checkin">
+          </label>
+          <label class="input">
+            CheckOut
+            <input type="date" class="form-control mb-2" v-model="checkout">
+          </label>
+          <button @click.prevent="searchRooms()" type="button" class="btn btn-primary">Search Rooms</button>
+        </form>
 
         <div class="box" v-if="searched">
           <div class="rooms">
@@ -22,11 +21,8 @@
               Number of Standard Rooms available: {{ standards.length }}
             </p>
             <RouterLink :to="{ name: 'confirm' }">
-              <button
-                class="btn btn-secondary"
-                :class="{ hidden: standards.length === 0 }"
-                @click="sendRoom(standards[0])"
-              >
+              <button class="btn btn-secondary" :class="{ hidden: standards.length === 0 }"
+                @click="sendRoom(standards[0])">
                 Reserve One
               </button>
             </RouterLink>
@@ -37,11 +33,7 @@
               Number of Double Rooms available: {{ doubles.length }}
             </p>
             <RouterLink :to="{ name: 'confirm' }">
-              <button
-                class="btn btn-secondary"
-                :class="{ hidden: doubles.length === 0 }"
-                @click="sendRoom(doubles[0])"
-              >
+              <button class="btn btn-secondary" :class="{ hidden: doubles.length === 0 }" @click="sendRoom(doubles[0])">
                 Reserve One
               </button>
             </RouterLink>
@@ -52,11 +44,7 @@
               Number of Suite Rooms available: {{ suites.length }}
             </p>
             <RouterLink :to="{ name: 'confirm' }">
-              <button
-                class="btn btn-secondary"
-                :class="{ hidden: suites.length === 0 }"
-                @click="sendRoom(suites[0])"
-              >
+              <button class="btn btn-secondary" :class="{ hidden: suites.length === 0 }" @click="sendRoom(suites[0])">
                 Reserve One
               </button>
             </RouterLink>
@@ -64,7 +52,7 @@
         </div>
       </div>
     </div>
-  
+  </div>
 </template>
 
 <script>
@@ -109,19 +97,21 @@ export default {
   display: flex;
   align-items: center;
 }
+
 .checkRooms {
   display: flex;
   flex-direction: column;
 }
-.checkRooms > h1 {
-  margin-bottom: 3rem;
+
+.checkRooms>h1 {
+  margin-bottom: 2rem;
 }
 
 .container {
   border: 1px solid grey;
   border-radius: 1rem;
   padding: 2rem;
-  background-color: rgba(243, 239, 224, 0.8);
+  background-color: rgba(224, 237, 243, 0.8);
   justify-content: center;
 }
 
@@ -143,6 +133,10 @@ export default {
   flex-direction: column;
   width: 60%;
   padding: 1rem 3rem;
+}
+.btn-primary {
+  background-color: rgb(30, 138, 134);
+  border: 1px solid rgb(30, 138, 134);
 }
 
 .btn-primary,
