@@ -1,17 +1,15 @@
 <template>
   <div class="container">
     <div class="checkRooms main justify-content-center align-items-center ">
-      <br>
-      <br>
       <h1>Make a Reservation</h1>
       <form>
         <label>
-          CheckIn
-          <input type="date" v-model="checkin">
+          Check In
+          <input type="date" class="form-control mb-2" v-model="checkin">
         </label>
         <label class="input">
-          CheckOut
-          <input type="date" v-model="checkout">
+          Check Out
+          <input type="date" class="form-control mb-2" v-model="checkout">
         </label>
         <button @click.prevent="searchRooms()" type="button" class="btn btn-primary">Search Rooms</button>
       </form>
@@ -76,15 +74,17 @@ export default {
 <style lang="scss" scoped>
 .checkRooms {
   display: flex;
-
   flex-direction: column;
+}
+.checkRooms > h1 {
+  margin-bottom: 3rem;
 }
 
 .container {
   border: 1px solid grey;
   border-radius: 1rem;
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(243, 239, 224, 0.8);
   justify-content: center;
   padding: 2rem;
 }

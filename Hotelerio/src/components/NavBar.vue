@@ -18,7 +18,7 @@
       </div>
     </nav>
 
-    <nav class="navbar navbar-expand " v-else>
+    <nav v-else class="navbar navbar-expand " style="border: 1px solid red;">
       <div class="container-fluid">
         <h3 class="navbar-brand">HotelerioApp</h3>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -80,10 +80,18 @@ export default {
 <style lang="scss" scoped>
 header {
   z-index: 50;
-  height: 50px;
+  height: 80px;
   width: 100%;
   flex-shrink: 0;
-  background-color: grey;
+  background-color: rgb(243, 239, 224);
+  color: rgb(67, 66, 66);
 }
+.navbar {
+  width: 100%;
+}
+.navbar-brand {
+  color: rgb(34, 163, 159);
+}
+
 </style>
 
