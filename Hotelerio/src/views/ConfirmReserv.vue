@@ -1,10 +1,9 @@
 <template>
   <div class="container">
-    <div class="main">
-      <br>
-      <br>
-      <h1 v-if="reservDone === true">Reservation Confirmed</h1>
-      <h1 v-else>Confirm your Reservation</h1>
+    <br>
+    <br>
+    <div v-if="reservDone === false" class="main">
+      <h1>Confirm your Reservation</h1>
       <div class="reserv-info">
         <h4>Name: <span style="font-weight: 400;">{{ profile.name }}</span></h4>
         <h4>Surname: <span style="font-weight: 400;">{{ profile.surname }}</span></h4>
@@ -14,11 +13,18 @@
         <h4>Room Type: <span style="font-weight: 400;">{{ roomInfo.type }}</span></h4>
       </div>
       <div class="buttons">
-        <button v-if="reservDone === false" class="btn btn-danger" @click="clearReserv">CANCEL</button>
-        <button v-if="reservDone === false" class="btn btn-primary" @click="createReserv">CONFIRM</button>
-        <RouterLink v-else :to="{name: 'myReservations'}" class="btn btn-primary">CHECK RESERVATION</RouterLink>
+        <button class="btn btn-danger" @click="clearReserv">CANCEL</button>
+        <button class="btn btn-primary" @click="createReserv">CONFIRM</button>
       </div>
     </div>
+
+    <div v-else class="main">
+      <h1>Reservation Confirmed</h1>
+      <div class="buttons">
+        <RouterLink :to="{ name: 'myReservations' }" class="btn btn-primary">CHECK RESERVATION</RouterLink>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -47,8 +53,8 @@ export default {
           checkout: this.roomInfo.checkout
         }
         const response = await api.createReserv(this.reservation)
-        this.createdReserv = response
         this.reservDone = true
+        this.createdReserv = response
       } catch (error) {
         return { error: error.message }
       }
