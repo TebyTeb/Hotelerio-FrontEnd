@@ -1,0 +1,109 @@
+<template>
+    <div class="container">
+      <div class="main">
+        <br>
+        <br>
+        <h1> Standard</h1>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../assets/images/Standard/1.jpg" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="../assets/images/Standard/2.jpg" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="../assets/images/Standard/3.jpg" class="d-block w-100" alt="..." />
+            </div>
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div> 
+            <h3>21m²</h3>
+            <h3>Big bed</h3>
+            <h3>Wifi-Tv</h3>
+            <h3>BathRoom</h3>
+            <h3>Desk</h3>
+        </div>
+        <br>
+        <br>
+        <h1>Doble</h1>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../assets/images/Doble/1.jpg" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="../assets/images/Doble/2.jpg" class="d-block w-100" alt="..." />
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button"        data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div> 
+            <h3>21m²</h3>
+            <h3>Big bed</h3>
+            <h3>Wifi-Tv</h3>
+            <h3>BathRoom</h3>
+            <h3>Desk</h3>
+        </div>
+        <br>
+        <br>
+        <h1>Suite</h1>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../assets/images/Suite/1.jpg" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="../assets/images/Suite/2.jpg" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="../assets/images/Suite/3.jpg" class="d-block w-100" alt="..." />
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button"        data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <div> 
+            <h3>21m²</h3>
+            <h3>Big bed</h3>
+            <h3>Wifi-Tv</h3>
+            <h3>BathRoom</h3>
+            <h3>Desk</h3>
+        </div>
+    </div>
+</template>
+  
+<script>
+
+  export default {
+
+
+  };
+</script>
+  
+<style scoped>
+
+</style>
