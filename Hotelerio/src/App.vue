@@ -3,7 +3,6 @@ import { RouterLink, RouterView } from 'vue-router'
 import NavBar from '../src/components/NavBar.vue'
 import Footer from '../src/components/Footer.vue'
 import { useAuthStore } from './stores/store'
-import { def } from '@vue/shared';
 </script>
 
 <script>
