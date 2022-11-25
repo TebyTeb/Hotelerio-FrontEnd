@@ -16,11 +16,10 @@ We have created a website for clients to register in it and book reservations in
 ### Prerequisites
 
 To be able to install and run this project, you should run the following commands in order:
-* npm
-    ```sh
+   ```sh
   npm i 
   ```
-    ```sh
+   ```sh
   npm run build / npm run dev
   ```
   
