@@ -51,7 +51,7 @@
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" @click="logout">Log Out</a></li>
+              <li><a class="dropdown-item" @click="logout" style="cursor: pointer;">Log Out</a></li>
             </ul>
           </li>
         </div>
